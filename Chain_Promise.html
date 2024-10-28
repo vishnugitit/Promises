@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chain_Promise</title>
+</head>
+<body>
+    <script>
+       function demo(){
+        setTimeout(()=>{
+            console.log("Learn HTMl");
+        },2000)
+       }
+       function demo1(){
+        setTimeout(()=>{
+            console.log("Learn CSS");
+        },1000)
+       }
+       function demo2(){
+        setTimeout(()=>{
+            console.log("Learn JS");
+        },500)
+       }
+       demo(()=>{
+        demo1(()=>{
+            demo2()
+        })
+       })
+    </script>
+</body>
+</html>

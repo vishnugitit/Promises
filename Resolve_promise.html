@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resolve_promise</title>
+  </head>
+  <body>
+    <script>
+      const promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          const value = "This is the resolved value!";
+          resolve(value);
+          //   resolve("This is the resolved value!")
+        }, 1500);
+      });
+
+      promise
+        .then((e) => {
+          console.log(e);
+        })
+        .catch((x) => {
+          console.log("An error occurred:");
+        });
+    </script>
+  </body>
+</html>
