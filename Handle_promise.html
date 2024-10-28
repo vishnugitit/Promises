@@ -3,31 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      * {
-        margin: 20px;
-      }
-      p {
-        font-size: 30px;
-      }
-      #jd {
-        font-size: 24px;
-      }
-      #round1,
-      #round2,
-      #round3,
-      #round4,
-      #error {
-        font-size: 18px;
-        font-weight: 800;
-        font-family: cursive;
-      }
-      div {
-        border: 0.5px solid black;
-        width: 250px;
-      }
-    </style>
+    <title>Handle_Promise</title>
   </head>
   <body>
     <p>Tata Consultancy Services</p>
@@ -40,69 +16,5 @@
       <p id="error"></p>
     </div>
   </body>
-  <script>
-    // Getting Elements
-    let aptitude_round = document.getElementById("round1");
-    let communication_round = document.getElementById("round2");
-    let technical_round = document.getElementById("round3");
-    let hr_round = document.getElementById("round4");
-    let bug = document.getElementById("error");
-
-    // Aptitude
-    function aptitude() {
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve("Aptitude Round");
-        }, 2000);
-      });
-    }
-
-    // Communication
-    function communication() {
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve("Communication Round");
-        }, 1500);
-      });
-    }
-
-    // Technical
-    function technical() {
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve("Technical Interview");
-        }, 1000);
-      });
-    }
-    
-    // HR
-    function hr() {
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve("HR Interview");
-        }, 500);
-      });
-    }
-
-    aptitude()
-      .then((a) => {
-        aptitude_round.innerHTML = a;
-        console.log(a);
-        return communication();
-      })
-      .then((b) => {
-        communication_round.innerHTML = b;
-        console.log(b);
-        return technical();
-      })
-      .then((c) => {
-        technical_round.innerHTML = c;
-        console.log(c);
-        return hr();
-      })
-      .then((d) => {
-        hr_round.innerHTML = d;
-        console.log(d);
-      });
-  </script>
+  <script src="handle.js"></script>
 </html>

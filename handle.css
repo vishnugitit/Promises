@@ -1,0 +1,22 @@
+* {
+    margin: 20px;
+  }
+  p {
+    font-size: 30px;
+  }
+  #jd {
+    font-size: 24px;
+  }
+  #round1,
+  #round2,
+  #round3,
+  #round4,
+  #error {
+    font-size: 18px;
+    font-weight: 800;
+    font-family: cursive;
+  }
+  div {
+    border: 0.5px solid black;
+    width: 250px;
+  }
