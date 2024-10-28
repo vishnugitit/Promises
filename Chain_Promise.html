@@ -19,18 +19,26 @@
       #percent,
       #program,
       #error {
-        font-size: 15px;
+        font-size: 18px;
+        font-weight: 800;
+        font-family: cursive;
+      }
+      div {
+        border: 0.5px solid black;
+        width: 320px;
       }
     </style>
   </head>
   <body>
     <p>Software Developer</p>
     <p id="jd">Job Description</p>
-    <p id="graduate"></p>
-    <p id="branch"></p>
-    <p id="percent"></p>
-    <p id="program"></p>
-    <p id="error"></p>
+    <div>
+      <p id="graduate"></p>
+      <p id="branch"></p>
+      <p id="percent"></p>
+      <p id="program"></p>
+      <p id="error"></p>
+    </div>
     <script>
       // Getting Elements
       let ug = document.getElementById("graduate");
@@ -70,18 +78,22 @@
       year
         .then((a) => {
           ug.innerHTML = a;
+          console.log(a);
           return stream;
         })
         .then((b) => {
           section.innerHTML = b;
+          console.log(b);
           return percentage;
         })
         .then((c) => {
           grade.innerHTML = c;
+          console.log(c);
           return languages;
         })
         .then((d) => {
           technical.innerHTML = d;
+          console.log(d);
         })
         .catch((e) => {
           bug.innerHTML = e + " Error Occured ";
