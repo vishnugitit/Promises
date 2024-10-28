@@ -1,32 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chain_Promise</title>
-</head>
-<body>
+    <style>
+      * {
+        margin: 20px;
+      }
+      p {
+        font-size: 30px;
+      }
+      #jd {
+        font-size: 20px;
+      }
+      #graduate,
+      #branch,
+      #percent,
+      #program,
+      #error {
+        font-size: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Software Developer</p>
+    <p id="jd">Job Description</p>
+    <p id="graduate"></p>
+    <p id="branch"></p>
+    <p id="percent"></p>
+    <p id="program"></p>
+    <p id="error"></p>
     <script>
-       function demo(){
-        setTimeout(()=>{
-            console.log("Learn HTMl");
-        },2000)
-       }
-       function demo1(){
-        setTimeout(()=>{
-            console.log("Learn CSS");
-        },1000)
-       }
-       function demo2(){
-        setTimeout(()=>{
-            console.log("Learn JS");
-        },500)
-       }
-       demo(()=>{
-        demo1(()=>{
-            demo2()
+      // Getting Elements
+      let ug = document.getElementById("graduate");
+      let section = document.getElementById("branch");
+      let grade = document.getElementById("percent");
+      let technical = document.getElementById("program");
+      let bug = document.getElementById("error");
+
+      //   2022/ 2023/ 2024 Graduates
+      const year = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve("2022/2023/2024 Graduates");
+        }, 2000);
+      });
+
+      //   CSE Graduate
+      const stream = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve("CSE Graduate");
+        }, 1500);
+      });
+
+      //   65%
+      const percentage = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve("65% Aggregate");
+        }, 1000);
+      });
+
+      //   Programming Languages
+      const languages = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve("Programming Languages like(C++/ Java/ Python/ .NET)");
+        }, 500);
+      });
+
+      year
+        .then((a) => {
+          ug.innerHTML = a;
+          return stream;
         })
-       })
+        .then((b) => {
+          section.innerHTML = b;
+          return percentage;
+        })
+        .then((c) => {
+          grade.innerHTML = c;
+          return languages;
+        })
+        .then((d) => {
+          technical.innerHTML = d;
+        })
+        .catch((e) => {
+          bug.innerHTML = e + " Error Occured ";
+        });
     </script>
-</body>
+  </body>
 </html>
